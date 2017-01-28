@@ -1,0 +1,33 @@
+remind:
+  cron: 0 0 0 * * *
+  email:
+    text: "Hey, {0}!"
+    subject: NME
+
+backup:
+  cron: 0 0 12 * * *
+  email:
+    text: "Howdy, {0}."
+    subject: NME
+    attachment: backup.json
+
+spring:
+  data:
+    mongodb:
+      database: nme
+      port: 0
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: test
+    password: test
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          ssl:
+            enable: true

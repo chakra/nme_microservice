@@ -1,0 +1,21 @@
+security:
+  oauth2:
+    client:
+      clientId: transaction-service
+      clientSecret: ${TRANSACTION_SERVICE_PASSWORD}
+      accessTokenUri: http://auth-service:5000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
+spring:
+  data:
+    mongodb:
+      host: transaction-mongodb
+      username: user
+      password: ${MONGODB_PASSWORD}
+      database: nme
+      port: 27017
+
+server:
+  context-path: /transactions
+  port: 7000
